@@ -4,67 +4,70 @@ using Newtonsoft.Json;
 
 namespace APIVerve
 {
-public class issuesfound
-{
-    [JsonProperty("code")]
-    public string code { get; set; }
+    /// <summary>
+    /// Issuesfound data
+    /// </summary>
+    public class Issuesfound
+    {
+        [JsonProperty("code")]
+        public string Code { get; set; }
 
-    [JsonProperty("message")]
-    public string message { get; set; }
+        [JsonProperty("message")]
+        public string Message { get; set; }
 
-    [JsonProperty("type")]
-    public string type { get; set; }
+        [JsonProperty("type")]
+        public string Type { get; set; }
 
-}
+    }
+    /// <summary>
+    /// Data data
+    /// </summary>
+    public class Data
+    {
+        [JsonProperty("dkim_host")]
+        public string Dkimhost { get; set; }
 
-public class data
-{
-    [JsonProperty("dkim_host")]
-    public string dkimhost { get; set; }
+        [JsonProperty("dkim_record")]
+        public string Dkimrecord { get; set; }
 
-    [JsonProperty("dkim_record")]
-    public string dkimrecord { get; set; }
+        [JsonProperty("dkim_records_count")]
+        public int Dkimrecordscount { get; set; }
 
-    [JsonProperty("dkim_records_count")]
-    public int dkimrecordscount { get; set; }
+        [JsonProperty("has_dkim_record")]
+        public bool Hasdkimrecord { get; set; }
 
-    [JsonProperty("has_dkim_record")]
-    public bool hasdkimrecord { get; set; }
+        [JsonProperty("host")]
+        public string Host { get; set; }
 
-    [JsonProperty("host")]
-    public string host { get; set; }
+        [JsonProperty("issues_found")]
+        public Issuesfound[] Issuesfound { get; set; }
 
-    [JsonProperty("issues_found")]
-    public issuesfound[] issuesfound { get; set; }
+        [JsonProperty("key_type")]
+        public string Keytype { get; set; }
 
-    [JsonProperty("key_type")]
-    public string keytype { get; set; }
+        [JsonProperty("selector")]
+        public string Selector { get; set; }
 
-    [JsonProperty("selector")]
-    public string selector { get; set; }
+        [JsonProperty("valid")]
+        public bool Valid { get; set; }
 
-    [JsonProperty("valid")]
-    public bool valid { get; set; }
+        [JsonProperty("version")]
+        public string Version { get; set; }
 
-    [JsonProperty("version")]
-    public string version { get; set; }
+    }
+    /// <summary>
+    /// API Response object
+    /// </summary>
+    public class ResponseObj
+    {
+        [JsonProperty("status")]
+        public string Status { get; set; }
 
-}
+        [JsonProperty("error")]
+        public object Error { get; set; }
 
-public class ResponseObj
-{
-    [JsonProperty("status")]
-    public string status { get; set; }
+        [JsonProperty("data")]
+        public Data Data { get; set; }
 
-    [JsonProperty("error")]
-    public object error { get; set; }
-
-    [JsonProperty("data")]
-    public data data { get; set; }
-
-    [JsonProperty("code")]
-    public int code { get; set; }
-
-}
-
+    }
 }
